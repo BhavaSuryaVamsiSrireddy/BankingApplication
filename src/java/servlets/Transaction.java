@@ -15,8 +15,9 @@ public class Transaction extends HttpServlet{
     public void doGet(HttpServletRequest request,HttpServletResponse response) throws IOException, ServletException{
         response.setContentType("text/html");
         ArrayList<Tdata> list = new ArrayList<>();
-        //getting the transactions into a list through displayTransaction method.
+        //getting the transactions into a list through a static method displayTransaction in TransactOperations.
         list = TransactOperations.displayTransation();
+        //setting the list attribute to print it in the TransactionDisplay.jsp.
         request.setAttribute("list", list);
         request.getRequestDispatcher("TransactionDisplay.jsp").forward(request, response);
     }
