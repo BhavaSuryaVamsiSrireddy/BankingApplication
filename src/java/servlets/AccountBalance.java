@@ -14,6 +14,7 @@ public class AccountBalance extends HttpServlet{
         response.setContentType("text/html");
         //getting the account_balance from database using the static method displayAccountBalance in AccountsOperation class in classes package.
         int rs = AccountOperations.displayAccountBalance();
+        //setting the rs attribute that contains account_balance from database to display in DisplayBalance.jsp.
         request.setAttribute("result", rs);
         request.getRequestDispatcher("DisplayBalance.jsp").forward(request, response);
     }
