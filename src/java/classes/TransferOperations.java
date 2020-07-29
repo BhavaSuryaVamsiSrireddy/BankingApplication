@@ -19,7 +19,9 @@ import java.util.logging.Logger;
  */
 public class TransferOperations {
     public static int transferOperation(int transfer_amount){
+        //query to retrieve account_balance.
         String baquery = "select account_balance from user where uid=1";
+        //setting the database connection using getConnection method in ConnectionManager class.
         try (Connection currentcon = ConnectionManager.getConnection();
             Statement st = currentcon.createStatement();
             ResultSet rs = st.executeQuery(baquery)){
