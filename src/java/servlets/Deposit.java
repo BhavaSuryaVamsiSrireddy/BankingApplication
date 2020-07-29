@@ -18,7 +18,7 @@ public class Deposit extends HttpServlet{
         int deposit_amount = Integer.parseInt(request.getParameter("deposit_amount"));
         //checking whether the deposit_amount is greater than 0.
         if(deposit_amount > 0){
-            //updating the account balance in database and getting it by sending deposit_amount through the method depositOperation.
+            //updating the account balance in database and getting it by sending deposit_amount through the static method depositOperation in DepositOperations class in classes package.
             int ab = DepositOperations.depositOperation(deposit_amount);
             //setting the attributes deposit_amount and account_balance to print it in DisplayDeposit.jsp
             request.setAttribute("deposit_amount", deposit_amount);
