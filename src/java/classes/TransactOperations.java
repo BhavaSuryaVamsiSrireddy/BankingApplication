@@ -21,8 +21,10 @@ import java.util.logging.Logger;
  */
 public class TransactOperations {
     public static ArrayList<Tdata> displayTransation(){
+        //query to retrieve last five transactions.
         String baquery = "select * from transaction order by tid desc limit 5";
         ArrayList<Tdata> list = new ArrayList<Tdata>();
+        //setting the database connection using getConnection method in ConnectionManager class.
         try(Connection currentcon = ConnectionManager.getConnection();
             Statement st = currentcon.createStatement();
             ResultSet rs =  st.executeQuery(baquery)){
