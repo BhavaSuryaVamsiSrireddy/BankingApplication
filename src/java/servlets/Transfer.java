@@ -19,7 +19,7 @@ public class Transfer extends HttpServlet{
         int transfer_amount = Integer.parseInt(request.getParameter("transfer_amount"));
         //checking whether the transfer_amount is greater than 0.
         if(transfer_amount > 0){
-            //updating the account balance in database and getting it by sending transfer_amount through the method transferOperation. 
+            //updating the account balance in database and getting it by sending transfer_amount through the static method transferOperation in TransferOperations class in classes package. 
             int account_balance = TransferOperations.transferOperation(transfer_amount);
             if(account_balance!=-1){
                 //setting the attributes transfer_amount and account_balance to print it in DisplayTransfer.jsp
