@@ -22,6 +22,7 @@ public class AccountOperations {
     public static int displayAccountBalance(){
         int account_balance=0;
         String baquery = "select account_balance from user where uid = 1";
+        //setting database connection using getConnection method in ConnectionManager class.
         try(Connection currentcon = ConnectionManager.getConnection();
             Statement st = currentcon.createStatement();
             ResultSet rs = st.executeQuery(baquery)) {
